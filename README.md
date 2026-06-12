@@ -63,9 +63,10 @@ Once the package is ready, we can work on deploying the package.
 ```
 pip3 install --upgrade setuptools wheel twine
 ```
-2. Build the package with ```setup.py```.
+2. Build the package with the modern `build` tool.
 ```
-python3 setup.py sdist bdist_wheel
+pip3 install --upgrade build
+python3 -m build
 ```
 3. Check the contents of the .whl and .tar.gz distributions. The key things to look for are: (1) all of your package subdirectories like utils are added to both distributions, (2) your config and package data are included in both distributions.
 ```
